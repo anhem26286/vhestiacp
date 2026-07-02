@@ -149,6 +149,36 @@ router.put('/:domain', async (req, res) => {
       }
     }
 
+    // Change aliases: diff requested list against current ALIAS to add/remove
+    if (aliases !== undefined) {
+      const currentAliases = (currentInfo?.ALIAS || '')
+        .split(',')
+        .map(a => a.trim())
+        .filter(a => a);
+      const newAliases = (aliases || '')
+        .split(',')
+        .map(a => a.trim())
+        .filter(a => a);
+
+      const toAdd = newAliases.filter(a => !currentAliases.includes(a));
+      const toRemove = currentAliases.filter(a => !newAliases.includes(a));
+
+      for (const alias of toAdd) {
+        try {
+          await execHestia('v-add-web-domain-alias', [username, domain, alias]);
+        } catch (e) {
+          console.warn(`Failed to add alias ${alias}:`, e.message);
+        }
+      }
+      for (const alias of toRemove) {
+        try {
+          await execHestia('v-delete-web-domain-alias', [username, domain, alias]);
+        } catch (e) {
+          console.warn(`Failed to remove alias ${alias}:`, e.message);
+        }
+      }
+    }
+
     // Change web template
     if (webTemplate) {
       try {
