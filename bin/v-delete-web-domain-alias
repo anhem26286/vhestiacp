@@ -51,7 +51,7 @@ check_hestia_demo_mode
 #----------------------------------------------------------#
 
 # Preparing domain values for the template substitution
-local_ip=$(get_real_ip $IP)
+local_ip=$(get_real_ip "$IP")
 ALIAS=$(echo "$ALIAS" \
 	| sed -e "s/,/\n/g" \
 	| sed -e "s/^$dom_alias$//g" \
