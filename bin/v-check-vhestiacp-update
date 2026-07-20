@@ -20,7 +20,7 @@ source $HESTIA/func/main.sh
 source_conf "$HESTIA/conf/hestia.conf"
 
 # VHestiaCP specific
-VHESTIA_REPO="https://github.com/vietdev99/vhestiacp.git"
+VHESTIA_REPO="https://github.com/anhem26286/vhestiacp.git"
 VHESTIA_BRANCH="${VHESTIA_BRANCH:-main}"
 VHESTIA_DIR="$HESTIA"
 VERSION_FILE="$HESTIA/conf/vhestiacp.version"
@@ -88,7 +88,7 @@ if [ -d "$VHESTIA_DIR/.git" ]; then
     fi
 else
     # If not a git repo, try to get info via GitHub API
-    remote_info=$(curl -s "https://api.github.com/repos/vietdev99/vhestiacp/commits/$VHESTIA_BRANCH" 2>/dev/null)
+    remote_info=$(curl -s "https://api.github.com/repos/anhem26286/vhestiacp/commits/$VHESTIA_BRANCH" 2>/dev/null)
     if [ -n "$remote_info" ] && echo "$remote_info" | grep -q '"sha"'; then
         remote_commit=$(echo "$remote_info" | grep -oP '"sha":\s*"\K[^"]+' | head -1)
         remote_version="${remote_commit:0:8}"
@@ -97,7 +97,7 @@ else
             update_available="true"
 
             # Get recent commits from GitHub API for changelog
-            commits_json=$(curl -s "https://api.github.com/repos/vietdev99/vhestiacp/commits?sha=$VHESTIA_BRANCH&per_page=20" 2>/dev/null)
+            commits_json=$(curl -s "https://api.github.com/repos/anhem26286/vhestiacp/commits?sha=$VHESTIA_BRANCH&per_page=20" 2>/dev/null)
             if [ -n "$commits_json" ] && echo "$commits_json" | grep -q '"sha"'; then
                 # Extract commit sha (short) and message (first line only)
                 # Use jq if available, fallback to grep

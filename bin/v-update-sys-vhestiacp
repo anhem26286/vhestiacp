@@ -20,7 +20,7 @@ source $HESTIA/func/main.sh
 source_conf "$HESTIA/conf/hestia.conf"
 
 # VHestiaCP specific
-VHESTIA_REPO="https://github.com/vietdev99/vhestiacp.git"
+VHESTIA_REPO="https://github.com/anhem26286/vhestiacp.git"
 VHESTIA_BRANCH="${VHESTIA_BRANCH:-main}"
 VHESTIA_DIR="$HESTIA"
 UPDATE_LOG_DIR="$HESTIA/log/updates"
