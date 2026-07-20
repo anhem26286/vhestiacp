@@ -119,7 +119,7 @@ upgrade_complete_message() {
 	echo
 	echo "Upgrade complete! If you encounter any issues or find a bug,                 "
 	echo "please take a moment to report it to us on GitHub at the URL below:          "
-	echo "https://github.com/vietdev99/vhestiacp/issues                                  "
+	echo "https://github.com/anhem26286/vhestiacp/issues                                  "
 	echo
 	echo "Read the release notes to learn about new fixes and features:                "
 	echo "https://github.com/hestiacp/hestiacp/blob/release/CHANGELOG.md               "
@@ -149,7 +149,7 @@ upgrade_complete_message_log() {
 	echo "============================================================================="
 	echo "UPGRADE COMPLETE.                                                            "
 	echo "Please report any issues on GitHub:                                          "
-	echo "https://github.com/vietdev99/vhestiacp/issues                                  "
+	echo "https://github.com/anhem26286/vhestiacp/issues                                  "
 	echo "============================================================================="
 	echo
 	$BIN/v-log-action "system" "Info" "Updates" "Update installed (Version: $new_version)."
@@ -187,13 +187,13 @@ upgrade_send_notification_to_panel() {
 	# Add notification to panel if variable is set to true or is not set
 	if [[ "$new_version" =~ "alpha" ]]; then
 		# Send notifications for development releases
-		$BIN/v-add-user-notification "$ROOT_USER" 'Development snapshot installed' '<p><span class="u-text-bold">Version:</span> '$new_version'<br><span class="u-text-bold">Code Branch:</span> '$RELEASE_BRANCH'</p><p>Please report any bugs by <a href="https://github.com/vietdev99/vhestiacp/issues" target="_blank">opening an issue on GitHub</a>, and feel free to share your feedback on our <a href="https://forum.hestiacp.com" target="_blank">discussion forum</a>.</p><p><i class="fas fa-heart icon-red"></i> The Hestia Control Panel development team</p>'
+		$BIN/v-add-user-notification "$ROOT_USER" 'Development snapshot installed' '<p><span class="u-text-bold">Version:</span> '$new_version'<br><span class="u-text-bold">Code Branch:</span> '$RELEASE_BRANCH'</p><p>Please report any bugs by <a href="https://github.com/anhem26286/vhestiacp/issues" target="_blank">opening an issue on GitHub</a>, and feel free to share your feedback on our <a href="https://forum.hestiacp.com" target="_blank">discussion forum</a>.</p><p><i class="fas fa-heart icon-red"></i> The Hestia Control Panel development team</p>'
 	elif [[ "$new_version" =~ "beta" ]]; then
 		# Send feedback notification for beta releases
-		$BIN/v-add-user-notification "$ROOT_USER" 'Thank you for testing Hestia Control Panel '$new_version'.' '<p>Please share your feedback with our development team through our <a href="https://forum.hestiacp.com" target="_blank">discussion forum</a>.</p><p>Found a bug? <a href="https://github.com/vietdev99/vhestiacp/issues" target="_blank">Open an issue on GitHub</a>!</p><p><i class="fas fa-heart icon-red"></i> The Hestia Control Panel development team</p>'
+		$BIN/v-add-user-notification "$ROOT_USER" 'Thank you for testing Hestia Control Panel '$new_version'.' '<p>Please share your feedback with our development team through our <a href="https://forum.hestiacp.com" target="_blank">discussion forum</a>.</p><p>Found a bug? <a href="https://github.com/anhem26286/vhestiacp/issues" target="_blank">Open an issue on GitHub</a>!</p><p><i class="fas fa-heart icon-red"></i> The Hestia Control Panel development team</p>'
 	else
 		# Send normal upgrade complete notification for stable releases
-		$BIN/v-add-user-notification "$ROOT_USER" 'Upgrade complete' '<p>Hestia Control Panel has been updated to <span class="u-text-bold">v'$new_version'</span>.</p><p><a href="https://github.com/hestiacp/hestiacp/blob/release/CHANGELOG.md" target="_blank">View release notes</a></p><p>Please report any bugs by <a href="https://github.com/vietdev99/vhestiacp/issues" target="_blank">opening an issue on GitHub</a>.</p><p class="u-text-bold">Have a wonderful day!</p><p><i class="fas fa-heart icon-red"></i> The Hestia Control Panel development team</p>'
+		$BIN/v-add-user-notification "$ROOT_USER" 'Upgrade complete' '<p>Hestia Control Panel has been updated to <span class="u-text-bold">v'$new_version'</span>.</p><p><a href="https://github.com/hestiacp/hestiacp/blob/release/CHANGELOG.md" target="_blank">View release notes</a></p><p>Please report any bugs by <a href="https://github.com/anhem26286/vhestiacp/issues" target="_blank">opening an issue on GitHub</a>.</p><p class="u-text-bold">Have a wonderful day!</p><p><i class="fas fa-heart icon-red"></i> The Hestia Control Panel development team</p>'
 	fi
 }
 
@@ -231,7 +231,7 @@ upgrade_send_notification_to_email() {
 		echo >> $message_tmp_file
 		echo "What to do if you run into issues:" >> $message_tmp_file
 		echo "- Check our forums for possible solutions: https://forum.hestiacp.com" >> $message_tmp_file
-		echo "- File an issue report on GitHub: https://github.com/vietdev99/vhestiacp/issues" >> $message_tmp_file
+		echo "- File an issue report on GitHub: https://github.com/anhem26286/vhestiacp/issues" >> $message_tmp_file
 		echo "" >> $message_tmp_file
 		echo "Help support the Hestia Control Panel project by donating via PayPal: https://www.hestiacp.com/donate" >> $message_tmp_file
 		echo "===================================================" >> $message_tmp_file
@@ -350,10 +350,10 @@ upgrade_init_logging() {
 
 	# Add warnings for pre-release builds
 	if [[ "$new_version" =~ "alpha" ]]; then
-		$BIN/v-log-action "system" "Warning" "Updates" "Development build for testing purposes only. Report bugs at https://github.com/vietdev99/vhestiacp/issues/."
+		$BIN/v-log-action "system" "Warning" "Updates" "Development build for testing purposes only. Report bugs at https://github.com/anhem26286/vhestiacp/issues/."
 	fi
 	if [[ "$new_version" =~ "beta" ]]; then
-		$BIN/v-log-action "system" "Warning" "Updates" "Beta release. Please report bugs at https://github.com/vietdev99/vhestiacp/issues/."
+		$BIN/v-log-action "system" "Warning" "Updates" "Beta release. Please report bugs at https://github.com/anhem26286/vhestiacp/issues/."
 	fi
 }
 

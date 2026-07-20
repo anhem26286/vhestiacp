@@ -326,7 +326,7 @@ export default function UpdateSettings() {
             </p>
           </div>
           <a
-            href="https://github.com/vietdev99/vhestiacp"
+            href="https://github.com/anhem26286/vhestiacp"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-secondary"

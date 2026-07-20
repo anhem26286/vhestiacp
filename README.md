@@ -1,6 +1,6 @@
 # VHestiaCP
 
-[![GitHub](https://img.shields.io/badge/GitHub-vietdev99%2Fvhestiacp-blue?logo=github)](https://github.com/vietdev99/vhestiacp)
+[![GitHub](https://img.shields.io/badge/GitHub-anhem26286%2Fvhestiacp-blue?logo=github)](https://github.com/anhem26286/vhestiacp)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04%20LTS-orange?logo=ubuntu)](https://ubuntu.com/)
 [![License](https://img.shields.io/badge/License-GPLv3-green)](LICENSE)
 
@@ -32,7 +32,7 @@ VHestiaCP is an extended fork of [HestiaCP](https://hestiacp.com) with modern in
 
 Generate your custom installation command at:
 
-### 👉 **[https://vietdev99.github.io/vhestiacp/](https://vietdev99.github.io/vhestiacp/)**
+### 👉 **[https://anhem26286.github.io/vhestiacp/](https://anhem26286.github.io/vhestiacp/)**
 
 Select your options and copy the generated command.
 
@@ -42,7 +42,7 @@ Select your options and copy the generated command.
 
 ```bash
 # Clone repository
-git clone https://github.com/vietdev99/vhestiacp.git
+git clone https://github.com/anhem26286/vhestiacp.git
 cd vhestiacp/install
 
 # Run installer with options
@@ -135,7 +135,7 @@ Access via Admin Panel: **Server → Configure → VHestiaCP Extensions**
 ## 📖 Documentation
 
 - [HestiaCP Documentation](https://hestiacp.com/docs/)
-- [VHestiaCP Installer](https://vietdev99.github.io/vhestiacp/)
+- [VHestiaCP Installer](https://anhem26286.github.io/vhestiacp/)
 
 ## 🤝 Contributing
 

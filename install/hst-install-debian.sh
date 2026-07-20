@@ -2549,7 +2549,7 @@ cat $tmpfile
 rm -f $tmpfile
 
 # Add welcome message to notification panel
-$HESTIA/bin/v-add-user-notification "$username" 'Welcome to VHestiaCP!' '<p>You are now ready to begin adding <a href="/add/user/">user accounts</a> and <a href="/add/web/">domains</a>.</p><p>VHestiaCP Features: HAProxy, MongoDB, Node.js/PM2, Python/Gunicorn, modern web templates.</p><p>Please <a href="https://github.com/vietdev99/vhestiacp/issues" target="_blank">report any issues via GitHub</a>.</p><p class="u-text-bold">Have a wonderful day!</p><p><i class="fas fa-heart icon-red"></i> The VHestiaCP Team</p>'
+$HESTIA/bin/v-add-user-notification "$username" 'Welcome to VHestiaCP!' '<p>You are now ready to begin adding <a href="/add/user/">user accounts</a> and <a href="/add/web/">domains</a>.</p><p>VHestiaCP Features: HAProxy, MongoDB, Node.js/PM2, Python/Gunicorn, modern web templates.</p><p>Please <a href="https://github.com/anhem26286/vhestiacp/issues" target="_blank">report any issues via GitHub</a>.</p><p class="u-text-bold">Have a wonderful day!</p><p><i class="fas fa-heart icon-red"></i> The VHestiaCP Team</p>'
 
 # Clean-up
 # Sort final configuration file
