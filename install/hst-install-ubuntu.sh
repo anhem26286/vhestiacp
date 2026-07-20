@@ -3322,6 +3322,12 @@ backend letsencrypt_backend
 HAPROXY_EOF
 	fi
 
+	# nginx binds the server's primary IP (unassigned.inc -> directIP=$ip), NOT loopback.
+	# The heredocs above hardcode 127.0.0.1 for the backend servers, so HAProxy would connect
+	# to a port nothing listens on -> "backend has no server available" -> 503. Rewrite the
+	# backend targets to the real IP so HAProxy reaches nginx. Covers both SSL modes.
+	sed -i "s|127\.0\.0\.1:8080|${local_ip}:8080|g; s|127\.0\.0\.1:8443|${local_ip}:8443|g" /etc/haproxy/haproxy.cfg
+
 	# Create error pages
 	for code in 400 403 408 500 502 503 504; do
 		cat > /etc/haproxy/errors/${code}.http << ERROR_EOF
