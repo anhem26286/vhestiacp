@@ -140,7 +140,7 @@ router.post('/remote', async (req, res) => {
 
     cmd += ' 2>&1';
 
-    exec(cmd, (error, stdout, stderr) => {
+    exec(cmd, { timeout: 30000, killSignal: 'SIGKILL' }, (error, stdout, stderr) => {
       if (error) {
         console.error('Create remote error:', stderr);
         return res.status(500).json({ error: stderr || stdout || 'Failed to create remote' });
